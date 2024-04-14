@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './screens/home';
 import Profile from './screens/profile';
+import Quests from './screens/quests';
 
 import styles from '../styles/styles';
 import { COLORS } from '../constants';
@@ -18,6 +19,7 @@ const Tabs = () => {
     }}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Quests" component={Quests} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
