@@ -8,10 +8,17 @@ import * as Location from 'expo-location';
 import styles from "../../styles/styles"
 import { COLORS, SIZES, FONT } from "../../constants";
 import {ProfilePicture, ProfileInfo} from '../../components/';
-
+import useFetch from '../../hooks/useFetch';
 
 const Profile = () => {
     const router = useRouter();
+    const userID = "661bdb1e872c59230f91a6a9";
+
+    const { data, isLoading, error } = useFetch('GET', `api/locations/percent/${userID}`, {})
+
+    if(!(isLoading || data.length == 0)){
+        console.log(data);
+    }
 
     return (
         <View style={{flex: 1}}>
@@ -19,7 +26,7 @@ const Profile = () => {
                 <View style={styles.profile}>
                     <ProfilePicture />
                     {/* getrequest here */}
-                    <ProfileInfo percentage={55}/>
+                    <ProfileInfo percentage={data}/>
                 </View>
             </SafeAreaView>
         </ View>
