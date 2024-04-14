@@ -1,13 +1,23 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 import { COLORS, FONT } from "../constants";
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    regularText: {
-        fontFamily: FONT.regular,
-        fontSize: 20
+    main:{
+        flex: 1,
+        flexDirection: "column"
     },
+    regularText: (fontsize) => ({
+        fontFamily: FONT.regular,
+        fontSize: fontsize
+    }),
+    mediumText: (fontsize) => ({
+        fontFamily: FONT.medium,
+        fontSize: fontsize
+    }),
     container: {
         position: 'relative',
         width: '100%',
@@ -17,21 +27,87 @@ const styles = StyleSheet.create({
     },
     mapContainer: {
         flex: 1,
-        overflow: 'hidden',
-    }, 
-    headerButton: {
-        backgroundColor: COLORS.white, 
-        paddingHorizontal: 20, 
-        paddingVertical: 10, 
-        borderRadius: 100,
-        top: 40,
-        width: 140,
-        alignItems: 'center',
-        alignSelf: 'center'
+        marginHorizontal: 15,
+        marginBottom: 10,
+        borderRadius: 15,
+        overflow: "hidden"
     },
-    headerButtonText: {
+    fullMapContainer: {
+        flex: 1
+    },
+    headerTitleStyle: {
         fontFamily: FONT.bold,
-        fontSize: 20
+        fontSize: 24
+    },
+    questCard: {
+        width: windowWidth-30,
+        padding: 20,
+        marginHorizontal: 15,
+        marginVertical: 10,
+        borderRadius: 15,
+        backgroundColor: COLORS.tertiary
+    },
+    navBar: {
+        width: windowWidth,
+        height: 90,
+        padding: 20,
+        backgroundColor: COLORS.tertiary,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    globalView: {
+        flex: 1,
+        backgroundColor: COLORS.secondary
+    },
+    mapView: {
+        flex: 1
+    },
+    tabBarLabelStyle: {
+        fontFamily: FONT.regular,
+        fontSize: 12
+    },
+    tabBarStyle: {
+        backgroundColor: COLORS.tertiary
+    },
+    profilePicStyle: {
+        backgroundColor: COLORS.lightWhite,
+        width:150,
+        height:150,
+        alignSelf: 'center',
+        marginTop: 20,
+        borderRadius: 100,
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 20
+    },
+    btnImage: {
+        width: "60%",
+        height: "60%",
+        tintColor: COLORS.gray,
+    },
+    profile: {
+        flex: 1,
+    },
+    profileInfo: {
+        flex: 1,
+        backgroundColor: '#FFBE6D', // "Edge" background
+        maxHeight: 150,
+        maxWidth: 150,
+        marginLeft: 120,
+        marginTop: 10
+    },
+    completionText: {
+        fontFamily: FONT.bold,
+        fontSize: 45,
+        position: "absolute",
+        alignSelf: 'center',
+        marginTop: 46,
+        textAlign: "center"
+    },
+    regularCenteredText: {
+        fontFamily: FONT.regular,
+        fontSize: 23,
+        alignSelf:"center"
     }
 });
 

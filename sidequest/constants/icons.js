@@ -1,3 +1,5 @@
-import arrow from "../assets/icons/arrow.png"
+import user from "../assets/icons/user.png"
 
-export default {arrow};
+export default {
+    user
+};

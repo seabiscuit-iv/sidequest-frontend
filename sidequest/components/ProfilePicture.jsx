@@ -6,14 +6,16 @@ import { StyleSheet } from 'react-native-web'
 import styles from '../styles/styles'
 import { COLORS, SIZES, icons } from '../constants'
 
-const HeaderButton = () => {
+const ProfilePicture = () => {
     return (
-        <TouchableOpacity style={styles.headerButton}>
-            <Text style={styles.headerButtonText}>
-                Sidequest
-            </Text>
-        </TouchableOpacity>
+        <View style={styles.profilePicStyle}>
+            <Image 
+                source={icons.user}
+                resizeMode="contain"
+                style={styles.btnImage}
+            />
+        </View>
     )
 }
 
-export default HeaderButton
+export default ProfilePicture

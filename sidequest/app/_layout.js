@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
+import styles from '../styles/styles';
 
 const Layout = () => {
     const [fontsLoaded] = useFonts({
@@ -14,7 +15,13 @@ const Layout = () => {
         return null;
     }
 
-    return <Stack />;
+    return <Stack screenOptions={{ 
+        headerShown: true,
+        headerTransparent: true,
+        headerTitle: "Sidequest",
+        headerTitleStyle: styles.headerTitleStyle
+    }}/>;
+
 }
 
 export default Layout;

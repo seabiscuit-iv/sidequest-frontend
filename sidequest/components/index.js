@@ -1,9 +1,10 @@
-import Arrow from "./arrow"
-import InterfacePage from "./InterfacePage";
-import HeaderButton from "./HeaderButton";
+import QuestCard from "./QuestCard";
+import ProfilePicture from "./ProfilePicture";
+import ProfileInfo from "./ProfileInfo";
+
 
 export {
-    Arrow,
-    InterfacePage,
-    HeaderButton
+    QuestCard,
+    ProfilePicture,
+    ProfileInfo
 }
